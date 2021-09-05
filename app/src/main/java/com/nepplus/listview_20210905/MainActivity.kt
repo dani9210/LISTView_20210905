@@ -2,6 +2,8 @@ package com.nepplus.listview_20210905
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import com.nepplus.listview_20210905.adapters.StudentAdapter
 import com.nepplus.listview_20210905.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,6 +42,25 @@ class MainActivity : AppCompatActivity() {
 
 //        리스트뷰의 어댑터로 -> mAdapter가 역할을 하도록. 연결시키자.
         studentListView.adapter = mAdepter
+
+
+//        리스트뷰의, 각 줄이 눌렸을때 이벤트 처리.
+        studentListView.setOnItemClickListener { adapterView, view, position, l ->
+
+//            세번째 변수  : position or i => 어느 줄이 눌렸는지, 줄으 ㅣ위치를 알려줌.
+//            log.d("리스트뷰눌린줄", position.toString())
+
+//            클릭된 사람으 ㅣ이름을 토스트로 띄워보자.
+//            position을 가지고 => 클릭된 사람이 누구?
+
+
+//            Log.d("리스트뷰눌린줄", position.toString())
+
+            val clickedStudent = mStudentList [ position ]
+
+            Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT).show()
+
+        }
 
 
 
