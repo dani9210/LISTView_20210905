@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.nepplus.listview_20210905.R
 import com.nepplus.listview_20210905.datas.StudentData
+import org.w3c.dom.Text
 
 class StudentAdapter(
     val mContext: Context,
@@ -40,14 +41,24 @@ class StudentAdapter(
 
 //       row의 내부에서, 필요한 텍스트뷰 등 UI요소등을 가져오자.
         val nameTxt = row.findViewById<TextView>(R.id.nametxt )
-
+        val addressTxt = row.findViewById<TextView>(R.id.addressTxt )
+        val ageTxt = row.findViewById<TextView>(R.id.ageTxt)
+        val age = 2021 - data.birthyear +1
+        ageTxt.text = "(${age}세)"
         nameTxt.text = data.name
+        addressTxt.text = data.address
+//        ageTxt에는, 출생년도가 아니라 - > 나이가 들어가야함.
+//        출생년도로, 나이를 계산하는 로직? => 자바 기초 / 파이썬 기초 -> 언어 역량
 
 
 
-//        만들어진 row를 getView 작업의 결과물로 지정.
+ //        만들어진 row를 getView 작업의 결과물로 지정.
 
         return row
     }
 
 }
+
+
+
+
