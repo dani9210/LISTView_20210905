@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add( StudentData("차수나", 1966, "서울시 동대문구")  )
 
 
-
 //        미뤄놨던 mAdapter의 대입을 해주자.
         mAdepter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
 
